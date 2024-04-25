@@ -1,0 +1,52 @@
+<!-- MAIN CONTENT-->
+<div class="main-content">
+    <div class="section-content section-content-p30">
+      <div class="container-fluid">
+        <table class="table table-bordered">
+          <tr>
+            <th width="20%">Product Image</th>
+            <th width="50%">Product Detail</th>
+            <th width="30%"></th>
+          </tr>
+  
+          <tr *ngFor="let tempItem of cartItems">
+            <td>
+              <img
+                src="{{ tempItem.imageUrl }}"
+                class="img-responsive"
+                width="150px"
+              />
+            </td>
+            <td>
+              <p>{{ tempItem.name }}</p>
+              <p>Product subtitle title</p>
+              <p>{{ tempItem.unitPrice | currency : "GBP" }}</p>
+            </td>
+            <td>
+              <div class="items">
+                <label>{{ tempItem.quantity }}</label>
+                <select>
+                  <option></option>
+                </select>
+              </div>
+              <p>Sub-total $9.99</p>
+              <a href="#" class="primary-btn">Remove</a>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2"></td>
+            <td>
+              <b>Total Quantity:{{ totalQuantity }}</b>
+              <p>Shipping FREE</p>
+              <b>Total Price: {{ totalPrice | currency : "GBP" }}</b
+              ><br />
+              <a routerLink="/checkout" class="primary-btn">Checkout</a>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+  <!-- END PAGE CONTAINER-->
+  
